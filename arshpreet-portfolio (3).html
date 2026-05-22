@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arshpreet Kaur — Software Engineer & Web Developer | Punjab, India</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Arshpreet Kaur is a Software Engineering student at Chitkara University (Deakin Australia 2+2 Program), hackathon winner, and freelance web developer based in Punjab, India.">
+<meta name="keywords" content="Arshpreet Kaur, software engineer, web developer, Punjab, India, freelance developer, Chitkara University, Deakin University, Python, Java, React, HTML CSS">
+<meta name="author" content="Arshpreet Kaur">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (shows a preview when you share the link on WhatsApp, LinkedIn etc.) -->
+<meta property="og:title" content="Arshpreet Kaur — Software Engineer & Web Developer">
+<meta property="og:description" content="Software Engineering student, hackathon winner, and freelance web developer based in Punjab, India.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arshpreetkaur.github.io">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arshpreet Kaur — Software Engineer">
+<meta name="twitter:description" content="Software Engineering student, hackathon winner, and freelance web developer based in Punjab, India.">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0c0e12;--bg2:#111318;--bg3:#181c24;--bg4:#1e2330;
+  --text:#cdd6f4;--muted:#6c7086;--subtle:#45475a;
+  --green:#a6e3a1;--blue:#89b4fa;--yellow:#f9e2af;--red:#f38ba8;
+  --teal:#94e2d5;--mauve:#cba6f7;--peach:#fab387;
+  --border:rgba(255,255,255,0.06);
+  --font:'JetBrains Mono',monospace;
+  --font-display:'Syne',sans-serif;
+}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:60px}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.7;overflow-x:hidden}
+
+/* scanline overlay */
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9999}
+
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(12,14,18,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.8rem 4vw;display:flex;align-items:center;justify-content:space-between}
+.nav-prompt{color:var(--green);font-size:0.78rem;display:flex;align-items:center;gap:0.4rem}
+.nav-prompt span{color:var(--muted)}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links li a{color:var(--muted);text-decoration:none;font-size:0.72rem;padding:0.3rem 0.8rem;transition:color 0.2s;letter-spacing:0.05em}
+.nav-links li a:hover{color:var(--green)}
+.nav-links li a::before{content:'[';opacity:0;transition:opacity 0.2s}
+.nav-links li a::after{content:']';opacity:0;transition:opacity 0.2s}
+.nav-links li a:hover::before,.nav-links li a:hover::after{opacity:1;color:var(--muted)}
+
+/* HERO — terminal window */
+.hero{min-height:100vh;display:flex;align-items:center;padding:0 4vw;padding-top:5rem;position:relative}
+.terminal-window{width:100%;max-width:800px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:0 0 80px rgba(166,227,161,0.04),0 20px 60px rgba(0,0,0,0.6)}
+.terminal-titlebar{background:var(--bg3);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid var(--border)}
+.tb-dot{width:10px;height:10px;border-radius:50%}
+.tb-dot.red{background:#f38ba8}
+.tb-dot.yellow{background:#f9e2af}
+.tb-dot.green{background:#a6e3a1}
+.tb-title{margin-left:auto;margin-right:auto;font-size:0.7rem;color:var(--muted);letter-spacing:0.05em}
+.terminal-body{padding:1.5rem 2rem;min-height:420px}
+.t-line{margin-bottom:0.15rem;font-size:0.85rem;line-height:1.6;opacity:0;animation:fadeIn 0.1s forwards}
+@keyframes fadeIn{to{opacity:1}}
+.prompt{color:var(--green)}
+.prompt-path{color:var(--blue)}
+.prompt-git{color:var(--mauve)}
+.cmd{color:var(--text)}
+.output{color:var(--muted);padding-left:1.5rem}
+.output.hi{color:var(--text);padding-left:0}
+.val-green{color:var(--green)}
+.val-blue{color:var(--blue)}
+.val-yellow{color:var(--yellow)}
+.val-teal{color:var(--teal)}
+.val-mauve{color:var(--mauve)}
+.val-peach{color:var(--peach)}
+.t-cursor{display:inline-block;width:8px;height:1em;background:var(--green);vertical-align:text-bottom;animation:blink 1.2s step-end infinite}
+.hero-right{flex:1;padding-left:4vw;display:flex;flex-direction:column;gap:1.5rem}
+.hero-name{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;line-height:1;letter-spacing:-0.02em;color:var(--text)}
+.hero-name em{color:var(--green);font-style:normal}
+.hero-tagline{font-size:0.82rem;color:var(--muted);line-height:1.8;max-width:340px}
+.status-pills{display:flex;flex-wrap:wrap;gap:0.5rem}
+.pill{font-size:0.65rem;padding:0.25rem 0.7rem;border:1px solid;border-radius:2px;letter-spacing:0.05em}
+.pill-green{border-color:rgba(166,227,161,0.3);color:var(--green);background:rgba(166,227,161,0.05)}
+.pill-blue{border-color:rgba(137,180,250,0.3);color:var(--blue);background:rgba(137,180,250,0.05)}
+.cta-row{display:flex;gap:0.8rem;flex-wrap:wrap}
+.btn{font-family:var(--font);font-size:0.75rem;padding:0.6rem 1.4rem;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;display:inline-block;border:none}
+.btn-primary{background:var(--green);color:#0c0e12;font-weight:700}
+.btn-primary:hover{background:#b5f0b0;transform:translateY(-1px)}
+.btn-outline{border:1px solid var(--border);color:var(--muted)}
+.btn-outline:hover{border-color:var(--green);color:var(--green)}
+
+/* SECTIONS */
+section{padding:5rem 4vw;position:relative}
+.sec-header{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
+.sec-num{font-size:0.65rem;color:var(--muted);letter-spacing:0.1em}
+.sec-title{font-family:var(--font-display);font-size:1.8rem;font-weight:700;letter-spacing:-0.01em}
+.sec-line{flex:1;height:1px;background:var(--border);max-width:200px}
+
+/* ABOUT */
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:start}
+.about-block{background:var(--bg2);border:1px solid var(--border);padding:1.5rem}
+.about-block-title{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--border)}
+.about-text-p{font-size:0.82rem;color:var(--muted);line-height:1.9;margin-bottom:0.8rem}
+.about-text-p strong{color:var(--text);font-weight:500}
+.stats-cols{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+.stat-box{background:var(--bg2);padding:1.5rem 1.2rem}
+.stat-n{font-family:var(--font-display);font-size:2.2rem;font-weight:800;line-height:1;color:var(--green);letter-spacing:-0.03em}
+.stat-l{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem}
+
+/* SKILLS */
+.skills-bg{background:var(--bg2)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.skill-card{background:var(--bg);padding:1.5rem;transition:background 0.2s}
+.skill-card:hover{background:var(--bg3)}
+.skill-header{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem}
+.skill-icon{font-size:1rem}
+.skill-name{font-size:0.82rem;font-weight:500;color:var(--text)}
+.skill-items{display:flex;flex-direction:column;gap:0.4rem}
+.skill-item{display:flex;align-items:center;gap:0.6rem;font-size:0.75rem;color:var(--muted)}
+.skill-item::before{content:'›';color:var(--green)}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.proj-card{background:var(--bg2);border:1px solid var(--border);padding:1.5rem;transition:border-color 0.25s,transform 0.25s;position:relative;overflow:hidden}
+.proj-card:hover{border-color:rgba(166,227,161,0.25);transform:translateY(-3px)}
+.proj-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.proj-card:hover::after{transform:scaleX(1)}
+.proj-card.featured{border-color:rgba(166,227,161,0.2);background:linear-gradient(135deg,var(--bg2) 0%,rgba(166,227,161,0.03) 100%)}
+.proj-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:0.8rem}
+.proj-icon{font-size:1.2rem}
+.proj-links{display:flex;gap:0.5rem}
+.proj-link{font-size:0.7rem;color:var(--muted);text-decoration:none;padding:0.2rem 0.5rem;border:1px solid var(--border);transition:all 0.2s}
+.proj-link:hover{color:var(--green);border-color:rgba(166,227,161,0.3)}
+.proj-name{font-size:0.9rem;font-weight:500;color:var(--text);margin-bottom:0.5rem}
+.proj-desc{font-size:0.78rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.proj-stack{display:flex;flex-wrap:wrap;gap:0.3rem}
+.stack-tag{font-size:0.62rem;padding:0.15rem 0.45rem;background:rgba(137,180,250,0.08);color:var(--blue);border:1px solid rgba(137,180,250,0.15);letter-spacing:0.04em}
+.proj-badge{font-size:0.6rem;padding:0.2rem 0.6rem;background:rgba(249,226,175,0.1);color:var(--yellow);border:1px solid rgba(249,226,175,0.2);display:inline-block;margin-bottom:0.8rem;letter-spacing:0.08em;text-transform:uppercase}
+
+/* HACKATHON */
+.hack-box{background:var(--bg2);border:1px solid rgba(166,227,161,0.2);padding:2rem;display:flex;gap:2rem;align-items:center;flex-wrap:wrap;margin-top:1.5rem;position:relative;overflow:hidden}
+.hack-box::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--green)}
+.hack-trophy{font-size:3rem;flex-shrink:0}
+.hack-content{}
+.hack-tag{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:0.5rem}
+.hack-title{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:0.4rem}
+.hack-desc{font-size:0.78rem;color:var(--muted);line-height:1.7;margin-bottom:0.8rem}
+
+/* EDUCATION */
+.edu-bg{background:var(--bg2)}
+.edu-list{display:flex;flex-direction:column}
+.edu-item{display:grid;grid-template-columns:180px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--border);align-items:start}
+.edu-year{font-size:0.7rem;letter-spacing:0.1em;color:var(--muted);padding-top:0.2rem}
+.edu-name{font-size:0.88rem;font-weight:500;color:var(--text);margin-bottom:0.2rem}
+.edu-degree{font-size:0.75rem;color:var(--muted);margin-bottom:0.6rem}
+.edu-grade{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.6rem;background:rgba(166,227,161,0.08);color:var(--green);border:1px solid rgba(166,227,161,0.2)}
+
+/* CONTACT */
+.contact-inner{text-align:center;max-width:560px;margin:0 auto}
+.contact-big{font-family:var(--font-display);font-size:clamp(2rem,5vw,4rem);font-weight:800;letter-spacing:-0.02em;line-height:1.05;margin-bottom:1rem}
+.contact-big em{color:var(--green);font-style:normal}
+.contact-sub{font-size:0.8rem;color:var(--muted);margin-bottom:2rem;line-height:1.8}
+.contact-row{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.contact-email{font-size:0.78rem;color:var(--muted);margin-top:1rem}
+.contact-email a{color:var(--blue);text-decoration:none}
+.contact-email a:hover{color:var(--teal)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:1.5rem 4vw;display:flex;justify-content:space-between;font-size:0.68rem;color:var(--muted);flex-wrap:wrap;gap:0.5rem}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:900px){.hero{flex-direction:column;padding-top:6rem;gap:2rem}.hero-right{padding-left:0}.about-inner{grid-template-columns:1fr}}
+@media(max-width:600px){.edu-item{grid-template-columns:1fr;gap:0.4rem}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-prompt">
+    <span style="color:var(--green)">arshpreet</span>
+    <span>@</span>
+    <span style="color:var(--blue)">portfolio</span>
+    <span>:~$</span>
+    <span style="color:var(--text);margin-left:0.3rem">_</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});return false;">about</a></li>
+    <li><a href="#skills" onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'});return false;">skills</a></li>
+    <li><a href="#projects" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'});return false;">projects</a></li>
+    <li><a href="#education" onclick="document.getElementById('education').scrollIntoView({behavior:'smooth'});return false;">education</a></li>
+    <li><a href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="terminal-window">
+    <div class="terminal-titlebar">
+      <div class="tb-dot red"></div>
+      <div class="tb-dot yellow"></div>
+      <div class="tb-dot green"></div>
+      <div class="tb-title">arshpreet@portfolio ~ bash</div>
+    </div>
+    <div class="terminal-body" id="terminal-body">
+      <!-- lines injected by JS -->
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-name">Arsh<em>preet</em><br>Kaur.</div>
+    <div class="hero-tagline">Software Engineering student · Chitkara University + Deakin Australia 2+2 Program.<br>Hackathon winner. Full-stack builder. Based in Punjab, India.</div>
+    <div class="status-pills">
+      <span class="pill pill-green">● Open to freelance</span>
+      <span class="pill pill-blue">1st Year · Chitkara × Deakin</span>
+    </div>
+    <div class="cta-row">
+      <a href="#projects" class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'});return false;">./see-my-work</a>
+      <a href="#contact" class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">./contact-me</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-header reveal">
+    <span class="sec-num">01.</span>
+    <h2 class="sec-title">about</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="about-inner">
+    <div class="reveal">
+      <div class="about-block">
+        <div class="about-block-title">// who_am_i.txt</div>
+        <p class="about-text-p">I'm a 1st-year Software Engineering student at <strong>Chitkara University</strong>, enrolled in the <strong>Deakin University Australia 2+2 Global Program</strong>, currently achieving <strong>High Distinction</strong> grades in my first semester.</p>
+        <p class="about-text-p">I won <strong>Eclipse 6.0</strong>, a competitive hackathon at Thapar University, Punjab — building a real product under pressure with a team.</p>
+        <p class="about-text-p">I work across the full stack — Python, Java, C#, HTML/CSS — and know my way around Docker, Linux, Redis, and databases.</p>
+        <p class="about-text-p">Currently offering freelance web development and software consulting. Working globally online from Punjab, India.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="stats-cols">
+        <div class="stat-box"><div class="stat-n">94<span style="font-size:1.2rem">%</span></div><div class="stat-l">Class 10</div></div>
+        <div class="stat-box"><div class="stat-n">93<span style="font-size:1.2rem">%</span></div><div class="stat-l">Class 12 PCM</div></div>
+        <div class="stat-box"><div class="stat-n" style="color:var(--blue)">HD</div><div class="stat-l">Sem 1 Grade</div></div>
+        <div class="stat-box"><div class="stat-n" style="color:var(--yellow);font-size:1.3rem">Best<br>FY</div><div class="stat-l">Eclipse 6.0 Hack</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-bg">
+  <div class="sec-header reveal">
+    <span class="sec-num">02.</span>
+    <h2 class="sec-title">skills</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="skill-card">
+      <div class="skill-header"><span class="skill-icon">⌨️</span><span class="skill-name">Languages</span></div>
+      <div class="skill-items">
+        <div class="skill-item"><span style="color:var(--yellow)">Python</span></div>
+        <div class="skill-item"><span style="color:var(--peach)">Java</span></div>
+        <div class="skill-item"><span style="color:var(--mauve)">C#</span></div>
+        <div class="skill-item"><span style="color:var(--blue)">HTML / CSS</span></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-header"><span class="skill-icon">🐳</span><span class="skill-name">Infrastructure</span></div>
+      <div class="skill-items">
+        <div class="skill-item"><span>Docker</span></div>
+        <div class="skill-item"><span>Linux</span></div>
+        <div class="skill-item"><span>Redis</span></div>
+        <div class="skill-item"><span>SQL Databases</span></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-header"><span class="skill-icon">🎨</span><span class="skill-name">Design & Tools</span></div>
+      <div class="skill-items">
+        <div class="skill-item"><span>Adobe Suite</span></div>
+        <div class="skill-item"><span>Canva</span></div>
+        <div class="skill-item"><span>MS Office</span></div>
+        <div class="skill-item"><span>UI / Visual Design</span></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-header"><span class="skill-icon">🗣️</span><span class="skill-name">Soft Skills</span></div>
+      <div class="skill-items">
+        <div class="skill-item"><span>Strong communication</span></div>
+        <div class="skill-item"><span style="color:var(--green)">Public speaker</span></div>
+        <div class="skill-item"><span style="color:var(--yellow)">Debate competition winner</span></div>
+        <div class="skill-item"><span>Team collaboration</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-header reveal">
+    <span class="sec-num">03.</span>
+    <h2 class="sec-title">projects</h2>
+    <div class="sec-line"></div>
+  </div>
+
+  <!-- Hackathon winner callout -->
+  <div class="hack-box reveal">
+    <div class="hack-trophy">🏆</div>
+    <div class="hack-content">
+      <div class="hack-tag">★ Best First Year Hack — Eclipse 6.0 · Thapar University, Punjab</div>
+      <div class="hack-title">CampusGrid</div>
+      <div class="hack-desc">Won "Best First Year Hack" as a team at Eclipse 6.0 — a competitive hackathon at Thapar University, Punjab. Built CampusGrid, a campus resource and collaboration platform, under time pressure — demonstrating teamwork, fast execution, and full-stack thinking.</div>
+      <a href="https://github.com/Madhav-Kochhar7/campusgrid.git" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:0.4rem 1rem">View on GitHub ↗</a>
+    </div>
+  </div>
+
+  <div class="projects-grid" style="margin-top:1.5rem">
+    <div class="proj-card reveal">
+      <div class="proj-top">
+        <span class="proj-icon">💼</span>
+        <div class="proj-links">
+          <span class="proj-link" style="opacity:0.5;cursor:default">In Progress</span>
+        </div>
+      </div>
+      <div class="proj-badge">🚧 Coming Soon</div>
+      <div class="proj-name">CampusIT</div>
+      <div class="proj-desc">A part-time job hiring and discovery platform built for university students. Helping students find flexible on-campus and off-campus opportunities that fit their schedule.</div>
+      <div class="proj-stack">
+        <span class="stack-tag">HTML</span><span class="stack-tag">React</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Tailwind CSS</span><span class="stack-tag">Database</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="edu-bg">
+  <div class="sec-header reveal">
+    <span class="sec-num">04.</span>
+    <h2 class="sec-title">education</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="edu-list">
+    <div class="edu-item reveal">
+      <div class="edu-year">2026 – Present</div>
+      <div>
+        <div class="edu-name">Chitkara University · Deakin University, Australia</div>
+        <div class="edu-degree">Bachelor of Software Engineering · Deakin 2+2 Global Program · 1st Year</div>
+        <span class="edu-grade">HD — High Distinction · Semester 1</span>
+      </div>
+    </div>
+    <div class="edu-item reveal">
+      <div class="edu-year">2025</div>
+      <div>
+        <div class="edu-name">Sacred Heart Convent Senior Secondary School</div>
+        <div class="edu-degree">Class 12 — Physics, Chemistry, Mathematics (PCM)</div>
+        <span class="edu-grade">93%</span>
+      </div>
+    </div>
+    <div class="edu-item reveal">
+      <div class="edu-year">2023</div>
+      <div>
+        <div class="edu-name">Sacred Heart Convent Senior Secondary School</div>
+        <div class="edu-degree">Class 10</div>
+        <span class="edu-grade">94%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-big reveal">Get in<br><em>touch.</em></div>
+    <p class="contact-sub reveal">Open for freelance projects, tutoring, and collaborations.<br>Based in Punjab, India · Working globally online.</p>
+    <div class="contact-row reveal">
+      <a href="mailto:arshpreetkaur122006@gmail.com" class="btn btn-primary">./send-email</a>
+      <a href="https://www.linkedin.com/in/arshpreet-kaur-47841235b" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      <a href="https://github.com/Arrsshh-dev" target="_blank" class="btn btn-outline">GitHub ↗</a>
+    </div>
+    <div class="contact-email reveal">or email directly: <a href="mailto:arshpreetkaur122006@gmail.com">arshpreetkaur122006@gmail.com</a></div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Arshpreet Kaur</span>
+  <span>Built with HTML · CSS · JS</span>
+  <span>Punjab, India 🇮🇳</span>
+</footer>
+
+<script>
+// Terminal typewriter
+const lines = [
+  {type:'prompt', text:'whoami'},
+  {type:'output', text:'arshpreet kaur — software engineer', color:'val-green'},
+  {type:'empty'},
+  {type:'prompt', text:'cat skills.txt'},
+  {type:'output', text:'languages:    Python · Java · C# · HTML/CSS', color:'val-blue'},
+  {type:'output', text:'infra:        Docker · Linux · Redis · SQL', color:'val-teal'},
+  {type:'output', text:'design:       Adobe Suite · UI/Visual Design', color:'val-mauve'},
+  {type:'empty'},
+  {type:'prompt', text:'cat achievements.json'},
+  {type:'output', text:'{ "hackathon": "Eclipse 6.0 Winner 🏆",', color:'val-yellow'},
+  {type:'output', text:'  "grade":     "HD — High Distinction, Sem 1",', color:'val-yellow'},
+  {type:'output', text:'  "class_12":  "93% PCM",', color:'val-yellow'},
+  {type:'output', text:'  "class_10":  "94%" }', color:'val-yellow'},
+  {type:'empty'},
+  {type:'prompt', text:'echo $STATUS'},
+  {type:'output', text:'open to freelance ✓', color:'val-green'},
+  {type:'cursor'},
+];
+
+const tb = document.getElementById('terminal-body');
+let li=0;
+function nextLine(){
+  if(li>=lines.length)return;
+  const l=lines[li++];
+  const d=document.createElement('div');
+  d.className='t-line';
+  d.style.animationDelay=(li*0.04)+'s';
+  if(l.type==='prompt'){
+    d.innerHTML=`<span class="prompt">arshpreet<span class="muted">@</span><span class="prompt-path">portfolio</span>:<span class="prompt-git">~</span>$</span> <span class="cmd">${l.text}</span>`;
+  } else if(l.type==='output'){
+    d.innerHTML=`<span class="output ${l.color||''}">${l.text}</span>`;
+  } else if(l.type==='cursor'){
+    d.innerHTML=`<span class="prompt">arshpreet<span class="muted">@</span><span class="prompt-path">portfolio</span>:<span class="prompt-git">~</span>$</span> <span class="t-cursor"></span>`;
+  } else {
+    d.innerHTML='&nbsp;';
+  }
+  tb.appendChild(d);
+  setTimeout(nextLine, l.type==='prompt'?180:80);
+}
+nextLine();
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);obs.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
